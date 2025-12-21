@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c7a7b;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MENU ICON */
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+    background: white;
+    margin-bottom: 60px;
+    padding: 60px 40px;
+    border-radius: 8px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.home {
+    text-align: center;
+    background: #e6fffa;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2c7a7b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin: 15px 0;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+.skill-item i {
+  font-size: 26px;
+  margin-right: 6px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: #0A66C2; /* LinkedIn blue */
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.social-icon i {
+  font-size: 22px;
+}
+section h2{
+    margin-bottom: 20px;
+}
+
+
+}
