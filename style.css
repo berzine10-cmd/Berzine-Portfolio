@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL RESET
+GLOBAL RESET
 ========================= */
 * {
   margin: 0;
@@ -15,10 +15,11 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f7f7;
   color: #2f3e3e;
+  line-height: 1.6;
 }
 
 /* =========================
-   NAVBAR
+NAVBAR
 ========================= */
 .navbar {
   display: flex;
@@ -72,21 +73,82 @@ body {
 }
 
 /* =========================
-   SECTIONS
+SECTIONS (UNIFIED)
 ========================= */
 section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 60px 50px;
   background: #ffffff;
-  margin-bottom: 60px;
-  padding: 60px 40px;
-  border-radius: 10px;
-  border: 1px solid #cfdede;
-  scroll-margin-top: 90px;
+  border-radius: 14px;
+  border: 2px solid #e3f2f2;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 100px;
 }
+
+
+/* =========================
+SECTION TITLES (FIXED ALIGNMENT)
+========================= */
 
 section h2 {
-  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #2c7a7b;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;   /* 🔥 KEY FIX */
 }
 
+/* Decorative line under title */
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #3a8d8f;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+/* Decorative underline */
+section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3a8d8f;
+  margin-top: 12px;
+  border-radius: 3px;
+}
+
+/* Center underline ONLY for projects */
+.projects-section h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+SECTION CONTENT ALIGNMENT
+========================= */
+section p,
+section ul,
+section li,
+section .content,
+section .education-item,
+section .contact-item {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #4a5c5c;
+}
+
+/* Consistent first content spacing */
+section h2 + * {
+  margin-top: 10px;
+}
+
+/* =========================
+HOME
+========================= */
 .home {
   text-align: center;
   background: #e6fffa;
@@ -94,14 +156,14 @@ section h2 {
 }
 
 /* =========================
-   SKILLS
+SKILLS
 ========================= */
 .skills-list {
   list-style: none;
 }
 
 .skills-list li {
-  margin: 15px 0;
+  margin: 14px 0;
 }
 
 .skill-item {
@@ -117,27 +179,9 @@ section h2 {
 }
 
 /* =========================
-   SOCIAL LINKS
-========================= */
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 18px;
-  color: #0A66C2;
-  text-decoration: none;
-  margin-right: 15px;
-}
-
-.social-icon i {
-  font-size: 22px;
-}
-
-/* =========================
-   PROJECTS SECTION
+PROJECTS
 ========================= */
 .projects-section {
-  padding: 80px 20px;
   text-align: center;
 }
 
@@ -156,9 +200,9 @@ section h2 {
 .projects-grid {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
-/* Project card is the LINK */
 .project-card {
   width: 320px;
   text-decoration: none;
@@ -202,9 +246,31 @@ section h2 {
 }
 
 /* =========================
-   RESPONSIVE (MOBILE ONLY)
+CONTACT
+========================= */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: #0A66C2;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.social-icon i {
+  font-size: 22px;
+}
+
+/* =========================
+RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+  section {
+    padding: 45px 25px;
+    margin: 60px 15px;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -215,21 +281,32 @@ section h2 {
     width: 100%;
   }
 
-  .nav-links li {
-    margin: 15px 0;
-    text-align: center;
+  .nav-links.active {
+    display: flex;
   }
 
   .menu-icon {
     display: block;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-
   .projects-grid {
     flex-direction: column;
     align-items: center;
   }
+  .section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 50px;
+  height: 3px;
+  background-color: #3a8d8f;
+  border-radius: 2px;
+}
 }
